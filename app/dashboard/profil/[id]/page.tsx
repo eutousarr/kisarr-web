@@ -32,7 +32,7 @@ export default async function ProfilPage({ params }: UpdatePageProps) {
     <section className="h-screen max-w-[1000px] mx-auto w-full pt-10 relative">
 
 
-      <Link href='/dashboard/home'>
+      <Link href='/dashboard/home' className="ml-4">
         <button className="bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-1 rounded-md p-2 ">
           <MdOutlineChevronLeft  />
           <span>Retour</span>
