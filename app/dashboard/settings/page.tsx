@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export default async function SettingsDashboard() {
 
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) {
     redirect('/');
@@ -25,11 +25,11 @@ export default async function SettingsDashboard() {
         <input type="hidden" name="id" id="id" value={data?.id} />
         <Image src={data?.userImage as string} width={100} height={100} alt="" className="rounded-full"/>
         <label htmlFor="userName" className="text-sm">Nom:</label>
-        <input disabled id="userName" name="userName" className="bg-gray-200 text-gray-600  h-12 p-3 rounded-md border border-gray-300" type="text" defaultValue={data?.userName} />
+        <input disabled id="userName" name="userName" className="bg-gray-200 text-gray-900  h-12 p-3 rounded-md border border-gray-300" type="text" defaultValue={data?.userName} />
         <label htmlFor="userEmail" className="text-sm">Email:</label>
-        <input disabled id="userEmail" name="userEmail" className="bg-gray-200 text-gray-600 h-12 p-3 rounded-md border border-gray-300" type="email" defaultValue={data?.userEmail} />
+        <input disabled id="userEmail" name="userEmail" className="bg-gray-200 text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="email" defaultValue={data?.userEmail} />
         <label htmlFor="userJob" className="text-sm">Job:</label>
-        <input id="userJob" name="userJob" className="h-12 p-3 rounded-md border border-gray-300" type="text" defaultValue={data?.userJob as string} />
+        <input id="userJob" name="userJob" className="text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="text" defaultValue={data?.userJob as string} />
         <label htmlFor="userDescription" className="text-sm">Votre description:</label>
         <textarea id="userDescription" name="userDescription" className="h-24 p-3 rounded-md border border-gray-300" defaultValue={data?.userDescription as string}  />
         <label htmlFor="userWebsite" className="text-sm">Site web:</label>

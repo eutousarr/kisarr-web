@@ -26,7 +26,7 @@ export default function DashboardNav() {
         </ul>
 
         <SignOutButton>
-          <button className="bg-red-500 hover:bg-red-600 text-white rounded-md p-3 flex items-center gap-2"><FaSignOutAlt   /><span>Déconnexion</span> </button>
+          <button className="bg-red-500 hover:bg-red-600 text-white rounded-md p-2 flex items-center gap-2 text-sm"><FaSignOutAlt   /><span>Quitter</span> </button>
         </SignOutButton>
 
     </nav>

@@ -25,7 +25,7 @@ export default async function DashboardLayout({ children }: {children: React.Rea
         <div className="w-2/12 h-screen border-r border-gray-400 p-3">
           <DashboardNav/>
         </div>
-        <div className="w-full">
+        <div className="w-8/12">
           {children}
         </div>
         
