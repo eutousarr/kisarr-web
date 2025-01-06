@@ -5,19 +5,20 @@ import { addUser } from "@/services/userService";
 
 export default async function DashboardLayout({ children }: {children: React.ReactNode}) {
 
-  const { userId } = await auth();
+  const { userId } = auth();
 
   if (!userId) {
     redirect('/');
   }
 
   const user = await currentUser();
-
+  console.log('user', user)
   if(userId && user){
+    const username = `${user.username}` || "";
     const fullName = `${user.firstName} ${user.lastName}` || "";
     const email = user.emailAddresses[0]?.emailAddress || "";
     const image = user.imageUrl || "";
-    await addUser(userId, fullName, email, image)
+    await addUser(userId, username, fullName, email, image)
   }
 
   return (

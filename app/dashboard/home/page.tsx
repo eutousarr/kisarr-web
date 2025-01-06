@@ -17,6 +17,7 @@ export default async function HomeDashboard() {
             <div  className="border border-gray-300 rounded-md p-3 shadow-md flex justify-center items-center flex-col hover:translate-y-[-10px] transition-all">
             <Image src={user?.userImage as string} alt={`Photo de profil de ${user?.userName}`} width={100} height={100} className="rounded-full"/>
             <h3 className="font-bold uppercase text-center mt-2">{user?.userName}</h3>
+            <h4 className="font-bold uppercase text-center mt-2">{user?.userUsername}</h4>
             <p className="text-muted-foreground">{user?.userJob}</p>
             <button className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-md mt-2">Voir profil</button>
           </div>

@@ -11,7 +11,8 @@
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.11",
     "@clerk/nextjs": "^5.1.5",
-    "@prisma/client": "^5.15.0",
+    "@prisma/client": "^6.1.0",
+    "@prisma/extension-pulse": "^1.2.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
@@ -22,7 +23,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
-    "prisma": "^5.15.1",
+    "prisma": "^6.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

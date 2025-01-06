@@ -3,17 +3,19 @@
 import {prisma} from "@/lib/db"
 import { redirect } from "next/navigation";
 
-export const addUser = async(clerkUserId: string, userName: string, userEmail: string, userImage: string) => {
+export const addUser = async(clerkUserId: string,userUsername: string, userName: string, userEmail: string, userImage: string) => {
   try {
     const user = await prisma.user.upsert({
       where: {clerkUserId},
       update: {
         userName,
+        userUsername,
         userEmail,
         userImage
       },
       create: {
         clerkUserId,
+        userUsername,
         userName,
         userEmail,
         userImage

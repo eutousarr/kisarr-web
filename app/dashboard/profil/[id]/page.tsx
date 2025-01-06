@@ -44,6 +44,7 @@ export default async function ProfilPage({ params }: UpdatePageProps) {
       <div className="flex flex-col gap-2 border border-gray-300 rounded-md p-5 mt-5 relative">
 
       <Image src={user?.userImage as string} alt={`Photo de profil de ${user.userName}`} width={100} height={100} className="rounded-full"/>
+      <h4 className=" text-2xl font-black uppercase mt-4">{user.userUsername}</h4>
       <h3 className=" text-4xl font-black uppercase mt-4">{user.userName}</h3>
       <p className="text-lg text-muted-foreground">
           Membre depuis le {new Intl.DateTimeFormat("fr-FR", {

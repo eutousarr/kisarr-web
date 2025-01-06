@@ -1,29 +1,44 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id String @id @default(cuid())
-  userName String 
-  userEmail String 
-  userImage String?
+  id              String   @id @default(cuid())
+  userName        String
+  userUsername    String
+  userEmail       String
+  userImage       String?
   userDescription String?
-  userWebsite String?
-  userYoutube String?
-  userInstagram String?
-  userJob String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  clerkUserId String? @unique
-  admin Boolean @default(false)
+  userWebsite     String?
+  userYoutube     String?
+  userInstagram   String?
+  userJob         String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  clerkUserId     String?  @unique
+  admin           Boolean  @default(false)
+  posts           Post[]
 }
 
 
+model Post {
+  id        String  @id @default(cuid())
+  title     String
+  slug      String  @unique
+  content   String?
+  published Boolean @default(false)
+  viewCount Int      @default(0)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String?
+}
