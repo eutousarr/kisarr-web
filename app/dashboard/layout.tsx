@@ -14,11 +14,12 @@ export default async function DashboardLayout({ children }: {children: React.Rea
   const user = await currentUser();
   console.log('user', user)
   if(userId && user){
-    const username = `${user.username}` || "";
-    const fullName = `${user.firstName} ${user.lastName}` || "";
-    const email = user.emailAddresses[0]?.emailAddress || "";
-    const image = user.imageUrl || "";
-    await addUser(userId, username, fullName, email, image)
+    const clerkUserId = `${userId}` ;
+    const userUsernname = `${user.username}` || "";
+    const UserName = `${user.firstName} ${user.lastName}` || "";
+    const userEmail = user.emailAddresses[0]?.emailAddress || "";
+    const userImage = user.imageUrl || "";
+    await addUser(clerkUserId, userUsernname, UserName, userEmail, userImage)
   }
 
   return (

@@ -34,13 +34,13 @@ export default async function SettingsDashboard() {
         <label htmlFor="userJob" className="text-sm">Job:</label>
         <input id="userJob" name="userJob" className="text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="text" defaultValue={data?.userJob as string} />
         <label htmlFor="userDescription" className="text-sm">Votre description:</label>
-        <textarea id="userDescription" name="userDescription" className="h-24 p-3 rounded-md border border-gray-300" defaultValue={data?.userDescription as string} />
+        <textarea id="userDescription" name="userDescription" className=" text-gray-900 h-24 p-3 rounded-md border border-gray-300" defaultValue={data?.userDescription as string} />
         <label htmlFor="userWebsite" className="text-sm">Site web:</label>
-        <input id="userWebsite" name="userWebsite" className="h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userWebsite as string} />
+        <input id="userWebsite" name="userWebsite" className=" text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userWebsite as string} />
         <label htmlFor="userYoutube" className="text-sm">Youtube:</label>
-        <input id="userYoutube" name="userYoutube" className="h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userYoutube as string} />
+        <input id="userYoutube" name="userYoutube" className=" text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userYoutube as string} />
         <label htmlFor="userInstagram" className="text-sm">Instagram</label>
-        <input id="userInstagram" name="userInstagram" className="h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userInstagram as string} />
+        <input id="userInstagram" name="userInstagram" className=" text-gray-900 h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userInstagram as string} />
         <button className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-md">Modifier</button>
 
       </form>
