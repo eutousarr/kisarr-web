@@ -29,7 +29,6 @@ export const addUser = async(clerkUserId: string,userUsername: string, userName:
   }
 }
 
-
 export const getUser = async(clerkUserId: string) => {
   try {
     const user = await prisma.user.findUnique({
