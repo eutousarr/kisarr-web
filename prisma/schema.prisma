@@ -28,17 +28,31 @@ model User {
   updatedAt       DateTime @updatedAt
   clerkUserId     String?  @unique
   admin           Boolean  @default(false)
-  posts           Post[]
+  invoices          Invoice[] @relation("UserInvoices")
 }
 
+model Invoice {
+  id            String        @id
+  name          String
+  issuerName    String        @default("")
+  issuerAddress String        @default("")
+  clientName    String        @default("")
+  clientAddress String        @default("")
+  invoiceDate   String        @default("")
+  dueDate       String        @default("")
+  vatActive     Boolean       @default(false)
+  vatRate       Float         @default(20)
+  status        Int           @default(1)
+  lines         InvoiceLine[] @relation("InvoiceLines")
+  userId        String
+  createdById   User          @relation("UserInvoices", fields: [userId], references: [id])
+}
 
-model Post {
-  id        String  @id @default(cuid())
-  title     String
-  slug      String  @unique
-  content   String?
-  published Boolean @default(false)
-  viewCount Int      @default(0)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  String?
+model InvoiceLine {
+  id          String   @id @default(uuid())
+  description String   @default("")
+  quantity    Int      @default(0)
+  unitPrice   Float    @default(0)
+  invoiceId   String?
+  invoice     Invoice? @relation("InvoiceLines", fields: [invoiceId], references: [id], onDelete: Cascade)
 }

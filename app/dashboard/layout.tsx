@@ -5,7 +5,7 @@ import { addUser } from "@/services/userService";
 
 export default async function DashboardLayout({ children }: {children: React.ReactNode}) {
 
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) {
     redirect('/');
@@ -23,11 +23,11 @@ export default async function DashboardLayout({ children }: {children: React.Rea
   }
 
   return (
-      <section className="mx-auto w-full  mt-2 p-2 flex">
-        <div className="w-2/12 h-screen border-r border-gray-400 p-3">
+      <section className="mx-auto w-full  mt-1 p-2 flex gap-2">
+        <div className="w-2/12 h-screen border-r border-gray-400 p-2">
           <DashboardNav/>
         </div>
-        <div className="w-8/12">
+        <div className="w-7/12 mx-auto">
           {children}
         </div>
         

@@ -9,7 +9,7 @@ export default function Footer() {
     {name: "Instagram", icon:FaInstagramSquare, path: "https://instagram.com" },
   ]
   return (
-    <footer className="flex items-center justify-center flex-col gap-5 p-5 bg-gray-700 text-white">
+    <footer className="flex items-center justify-center flex-col gap-5 p-5 bg-gray-700 text-white w-full">
         <ul className="flex items-center justify-center gap-2">
           {menuFooter.map((item, index)=> (
             <li key={index}>
