@@ -7,12 +7,10 @@ const userData: Prisma.UserCreateInput[] = [
     userName: 'Alice',
     userUsername: 'alice',
     userEmail: 'alice@prisma.io',
-    posts: {
+    invoices: {
       create: [
         {
-          title: 'Join the Prisma Discord',
-          content: 'https://pris.ly/discord',
-          published: true,
+          name: 'Boutique',
         },
       ],
     },
@@ -21,12 +19,10 @@ const userData: Prisma.UserCreateInput[] = [
     userName: 'Nilu',
     userUsername: 'nilu',
     userEmail: 'nilu@prisma.io',
-    posts: {
+    invoices: {
       create: [
         {
-          title: 'Follow Prisma on Twitter',
-          content: 'https://www.twitter.com/prisma',
-          published: true,
+          name: 'Prisma on Twitter',
         },
       ],
     },
@@ -35,16 +31,13 @@ const userData: Prisma.UserCreateInput[] = [
     userName: 'Mahmoud',
     userUsername: 'moha',
     userEmail: 'mahmoud@prisma.io',
-    posts: {
+    invoices: {
       create: [
         {
-          title: 'Ask a question about Prisma on GitHub',
-          content: 'https://www.github.com/prisma/prisma/discussions',
-          published: true,
+          name: 'Prisma on GitHub',
         },
         {
-          title: 'Prisma on YouTube',
-          content: 'https://pris.ly/youtube',
+          name: 'Prisma on YouTube',
         },
       ],
     },
