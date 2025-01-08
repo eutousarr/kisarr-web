@@ -12,7 +12,7 @@ CREATE TABLE "User" (
     "userJob" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "clerkUserId" TEXT,
+    "clerkUserId" TEXT NOT NULL,
     "admin" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
