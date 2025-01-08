@@ -27,7 +27,7 @@ model User {
   userJob         String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-  clerkUserId     String?
+  clerkUserId     String?  @unique
   admin           Boolean  @default(false)
   invoices          Invoice[] @relation("UserInvoices")
 }
