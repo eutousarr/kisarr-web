@@ -18,24 +18,6 @@ CREATE TABLE "User" (
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
--- CreateTable
-CREATE TABLE "Post" (
-    "id" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "slug" TEXT NOT NULL,
-    "content" TEXT,
-    "published" BOOLEAN NOT NULL DEFAULT false,
-    "viewCount" INTEGER NOT NULL DEFAULT 0,
-    "authorId" TEXT,
-
-    CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
-);
-
 -- CreateIndex
 CREATE UNIQUE INDEX "User_clerkUserId_key" ON "User"("clerkUserId");
 
--- CreateIndex
-CREATE UNIQUE INDEX "Post_slug_key" ON "Post"("slug");
-
--- AddForeignKey
-ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
